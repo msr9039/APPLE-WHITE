@@ -31,18 +31,18 @@
         }
         
         .nav-container {
-            max-width: 1024px;
+            max-width: 1024px; 
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 100px; /* 與圖片高度一致，確保線條包裹 */
             padding: 0 20px;
         }
 
         .logo img { 
             height: 100px; 
-            width: auto; 
+            width: auto;  
             display: block;
         }
 
@@ -56,16 +56,16 @@
         }
         nav ul li a:hover { opacity: 1; color: var(--accent-blue); }
 
-        /* 【Hero 區塊：打造 Apple 的單一區塊感】 */
+        /* 【Hero 區塊】 */
         .hero { 
-            padding: 100px 20px 0 20px; /* 底部設為 0，由圖片自帶留白 */
+            padding: 100px 20px 0 20px; 
             background-color: var(--secondary-bg);
             text-align: center;
-            margin-bottom: 20px; /* 創造塊與塊之間的間距 */
+            margin-bottom: 20px; 
         }
 
         .hero-title { 
-            font-size: 56px; /* 放大標題，更具視覺衝擊 */
+            font-size: 56px; 
             font-weight: 600;
             letter-spacing: -0.005em;
             margin-bottom: 15px;
@@ -73,35 +73,42 @@
         }
 
         .hero-desc {
-            font-size: 28px;
-            margin-bottom: 30px;
-            max-width: 700px;
+            font-size: 25px; 
+            margin-bottom: 10px; /* 縮小第一段下方間距 */
+            max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
             color: var(--text-main);
             font-weight: 400;
         }
 
-        /* 【按鈕調整：圓角白底樣式】 */
+        /* 針對第二段較長文字的微調樣式 */
+        .hero-desc-sub {
+            font-size: 20px; /* 稍微縮小，增加層次感 */
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        /* 【按鈕區塊】 */
         .shop-container {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-bottom: 80px; /* 在按鈕與照片之間留出大量空白 */
+            margin-bottom: 50px; /*調整產品介紹按鈕區塊跟上方區塊的間距*/
         }
 
         .hero-btn {
             font-size: 17px;
             padding: 12px 24px;
             text-decoration: none;
-            border-radius: 980px; /* 保持圓角設定 */
+            border-radius: 980px; 
             transition: all 0.3s ease;
             font-weight: 400;
             border: 1px solid var(--accent-blue);
         }
         
         .btn-white { 
-            background-color: #ffffff; /* 依要求改為白底 */
+            background-color: #ffffff; 
             color: var(--accent-blue); 
         }
         .btn-white:hover { 
@@ -109,9 +116,8 @@
             color: #ffffff; 
         }
 
-        /* 英雄照片設定 */
         .hero-image {
-            margin-top: 50px; /* 確保照片上方有足夠留白 */
+            margin-top: 50px; 
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -122,20 +128,20 @@
             display: block;
         }
 
-        /* 【產品區塊：格狀排列】 */
+        /* 【產品格狀區塊】 */
         .container { max-width: 1024px; margin: 0 auto 80px auto; padding: 0 20px; }
         
         .product-grid { 
-            display: grid; 
+            display: grid; /* 將 2 改成 3，代表每一行平均分配成 3 個等份 */
             grid-template-columns: repeat(2, 1fr); 
-            gap: 20px; 
+            gap: 30px; 
         }
         
         .product-card { 
             background: var(--secondary-bg); 
-            padding: 60px 40px 0 40px; /* 增加頂部內距，讓標題下方照片更靠下 */
+            padding: 30px 40px 0 40px; /*產品區塊中文字與上方外框的間距*/
             text-align: center; 
-            border-radius: 28px; /* 更加圓潤的塊狀邊角 */
+            border-radius: 28px; 
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.25, 1);
             overflow: hidden;
             display: flex;
@@ -145,15 +151,17 @@
         .product-card:hover { transform: scale(1.01); }
         
         .product-card h3 { font-size: 32px; margin-bottom: 10px; font-weight: 600; }
-        .product-card p { color: var(--text-secondary); font-size: 19px; margin-bottom: 30px; }
+        .product-card p { color: var(--text-secondary); font-size: 19px; margin-bottom: 10px;/*調整產品卡片裡圖片與文字的下方間距*/ }
         
+         
         /* 產品照片留白與對齊 */
         .product-card img { 
             height: 300px; 
             width: auto; 
             object-fit: contain; 
-            margin-top: 40px; /* 確保照片上方留白 */
-        }
+            margin-top: 20px; /* 確保照片上方留白 */
+		        }
+
 
         /* 【頁尾】 */
         footer { 
@@ -169,9 +177,10 @@
         @media (max-width: 768px) {
             .hero-title { font-size: 40px; }
             .hero-desc { font-size: 20px; }
+            .hero-desc-sub { font-size: 16px; }
             .product-grid { grid-template-columns: 1fr; }
-            .nav-container { height: 60px; }
-            .logo img { height: 60px; }
+            .nav-container { height: 70px; } /* 手機版略縮 */
+            .logo img { height: 60px; } 
         }
     </style>
 </head>
@@ -180,7 +189,7 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <img src="邁克兄弟LOGO_名字.jpg" alt="邁克兄弟科技">
+                <img src="公司logo/邁克兄弟LOGO_名字.JPG" alt="邁克兄弟科技">
             </div>
             <nav>
                 <ul>
@@ -196,26 +205,24 @@
 
     <div class="hero">
         <h1 class="hero-title">即日起官網開啟店到店服務</h1>
-        <p class="hero-desc">運費更省、取貨更彈性、交易更安全。</p>
+        <p class="hero-desc">運費更省、取貨更彈性、交易更安全</p>
+        <p class="hero-desc hero-desc-sub">若賣場內未見您尋找的特定品項，歡迎透過郵件或電話與我們聯繫，獲取專屬協助</p>
         
         <div class="shop-container">
-            <a href="#" class="hero-btn btn-white">進一步了解</a>
-            <a href="#" class="hero-btn btn-white">立即選購</a>
-        </div>
-
-        <div class="hero-image">
-            <img src="以色列temi機器人.jpg" alt="主打產品展示">
+            <a href="https://myship.7-11.com.tw/general/detail/GM2604107315008" target="_blank" rel="noopener noreferrer" class="hero-btn btn-white">7-11賣貨便</a>
+            <a href="https://shopee.tw/shop/983402611" target="_blank" rel="noopener noreferrer" class="hero-btn btn-white">蝦皮賣場</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="hero-btn btn-white">全家賣場+</a>
         </div>
     </div>
 
-    <div class="container">
+   <div class="container"> 
         <div class="product-grid">
             <div class="product-card">
                 <div>
-                    <h3>以色列 Temi 機器人</h3>
+                    <h3>TEMI V3</h3>
                     <p>智慧社交與自動導航。科技，走進生活。</p>
                 </div>
-                <img src="以色列temi機器人.jpg" alt="以色列 Temi 機器人">
+                <img src="產品圖片/TEMI V3 去背版 .png" alt="TEMI V3">
             </div>
 
             <div class="product-card">
@@ -246,7 +253,9 @@
 
     <footer>
         <div class="footer-content">
-            <p>服務電話：02-8751-6656 | 公司地址：台北市內湖區文德路90巷39號2樓之1</p>
+            <p>服務電話：02-8751-6656</p>
+            <p>公司地址：台北市內湖區文德路90巷39號2樓之1</p>
+            <p>聯絡信箱：admin@smart-robot.com.tw</p>
             <p style="margin-top: 10px;">Copyright © 2026 邁克兄弟科技股份有限公司。保留一切權利。</p>
         </div>
     </footer>
