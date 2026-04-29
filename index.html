@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邁克兄弟科技股份有限公司 | Apple Style</title>
+    <style>
+        /* Apple 官網風格基礎設定 */
+        :root {
+            --bg-color: #ffffff;
+            --secondary-bg: #f5f5f7;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-blue: #0066cc;
+            --nav-bg: rgba(251, 251, 253, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "SF Pro TC", "SF Pro Display", "PingFang TC", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.47; letter-spacing: -0.022em; }
+
+        /* 【頁首導覽列】 */
+        header { 
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+        }
+
+        .logo img { 
+            height: 100px; 
+            width: auto; 
+            display: block;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav ul li a { 
+            font-size: 16px; 
+            color: var(--text-main); 
+            text-decoration: none; 
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        nav ul li a:hover { opacity: 1; color: var(--accent-blue); }
+
+        /* 【Hero 區塊：打造 Apple 的單一區塊感】 */
+        .hero { 
+            padding: 100px 20px 0 20px; /* 底部設為 0，由圖片自帶留白 */
+            background-color: var(--secondary-bg);
+            text-align: center;
+            margin-bottom: 20px; /* 創造塊與塊之間的間距 */
+        }
+
+        .hero-title { 
+            font-size: 56px; /* 放大標題，更具視覺衝擊 */
+            font-weight: 600;
+            letter-spacing: -0.005em;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .hero-desc {
+            font-size: 28px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-main);
+            font-weight: 400;
+        }
+
+        /* 【按鈕調整：圓角白底樣式】 */
+        .shop-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 80px; /* 在按鈕與照片之間留出大量空白 */
+        }
+
+        .hero-btn {
+            font-size: 17px;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 980px; /* 保持圓角設定 */
+            transition: all 0.3s ease;
+            font-weight: 400;
+            border: 1px solid var(--accent-blue);
+        }
+        
+        .btn-white { 
+            background-color: #ffffff; /* 依要求改為白底 */
+            color: var(--accent-blue); 
+        }
+        .btn-white:hover { 
+            background-color: var(--accent-blue); 
+            color: #ffffff; 
+        }
+
+        /* 英雄照片設定 */
+        .hero-image {
+            margin-top: 50px; /* 確保照片上方有足夠留白 */
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 【產品區塊：格狀排列】 */
+        .container { max-width: 1024px; margin: 0 auto 80px auto; padding: 0 20px; }
+        
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+        }
+        
+        .product-card { 
+            background: var(--secondary-bg); 
+            padding: 60px 40px 0 40px; /* 增加頂部內距，讓標題下方照片更靠下 */
+            text-align: center; 
+            border-radius: 28px; /* 更加圓潤的塊狀邊角 */
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.25, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover { transform: scale(1.01); }
+        
+        .product-card h3 { font-size: 32px; margin-bottom: 10px; font-weight: 600; }
+        .product-card p { color: var(--text-secondary); font-size: 19px; margin-bottom: 30px; }
+        
+        /* 產品照片留白與對齊 */
+        .product-card img { 
+            height: 300px; 
+            width: auto; 
+            object-fit: contain; 
+            margin-top: 40px; /* 確保照片上方留白 */
+        }
+
+        /* 【頁尾】 */
+        footer { 
+            background: var(--bg-color); 
+            color: var(--text-secondary); 
+            padding: 60px 20px; 
+            font-size: 12px;
+            border-top: 1px solid #d2d2d7;
+        }
+        
+        .footer-content { max-width: 1024px; margin: 0 auto; }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 40px; }
+            .hero-desc { font-size: 20px; }
+            .product-grid { grid-template-columns: 1fr; }
+            .nav-container { height: 60px; }
+            .logo img { height: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="邁克兄弟LOGO_名字.jpg" alt="邁克兄弟科技">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">產品介紹</a></li>
+                    <li><a href="#">線上購買</a></li>
+                    <li><a href="#">下載服務</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1 class="hero-title">即日起官網開啟店到店服務</h1>
+        <p class="hero-desc">運費更省、取貨更彈性、交易更安全。</p>
+        
+        <div class="shop-container">
+            <a href="#" class="hero-btn btn-white">進一步了解</a>
+            <a href="#" class="hero-btn btn-white">立即選購</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="以色列temi機器人.jpg" alt="主打產品展示">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="product-grid">
+            <div class="product-card">
+                <div>
+                    <h3>以色列 Temi 機器人</h3>
+                    <p>智慧社交與自動導航。科技，走進生活。</p>
+                </div>
+                <img src="以色列temi機器人.jpg" alt="以色列 Temi 機器人">
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <h3>DOBOT 機械手臂</h3>
+                    <p>高精度教育與工業協作 重塑生產力</p>
+                </div>
+                <img src="DOBOT機械手臂.jpg" alt="DOBOT 機械手臂">
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <h3>無人搬運車</h3>
+                    <p>室內室外皆能穩定運行 提升效率</p>
+                </div>
+                <img src="無人搬運車-履帶型.png" alt="無人搬運車">
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <h3>Temi 開發平台</h3>
+                    <p>自動化的最佳夥伴</p>
+                </div>
+                <img src="temi platform.jpg" alt="Temi 自主開發平台">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>服務電話：02-8751-6656 | 公司地址：台北市內湖區文德路90巷39號2樓之1</p>
+            <p style="margin-top: 10px;">Copyright © 2026 邁克兄弟科技股份有限公司。保留一切權利。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
